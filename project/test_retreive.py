@@ -1,0 +1,12 @@
+import unittest
+from retrieve import Retriever
+
+class TestIndex(unittest.TestCase):
+	def test_retrieve(self):
+		r = Retriever("politics are crazy")
+		f = r.tf_idf_dict
+		supposedToEqual={'http://money.cnn.com': (0.0013171176598753267, '5.html', 'CNNMoney - Business, financial and personal finance news'), 'http://www.cnn.com/health': (0.00037832056952637807, '7.html', 'Health News - CNN.com'), 'http://www.cnn.com/world': (0.00032408460272967616, '3.html', 'World News - CNN.com'), 'http://money.cnn.com/technology': (0.007882191161297547, '9.html', 'Technology - Tech News - CNNMoney'), 'http://bleacherreport.com': (0.00041755859077942224, '12.html', 'Bleacher Report | Sports. Highlights. News. Now.'), 'http://www.cnn.com/specials/us/energy-and-environment': (0.0004683541446187632, '16.html', 'Energy + Environment - CNN.com'), 'http://www.cnn.com/specials/us/crime-and-justice': (0.0007852993988762899, '15.html', 'Crime + Justice - CNN.com'), 'http://www.cnn.com/americas': (0.000594437090153933, '20.html', 'Breaking News, Latest News and Videos - CNN.com'), 'http://www.cnn.com/entertainment': (0.00042538931433094693, '8.html', 'Entertainment News - Celebrities, Movies, TV, Music - CNN.com'), 'http://www.cnn.com/specials/us/extreme-weather': (0.0004503980751765103, '17.html', 'Extreme Weather - CNN.com'), 'http://www.cnn.com/opinions': (0.00021083369793011044, '6.html', 'Opinion, Commentary, Analysis - CNN.com'), 'http://www.cnn.com/': (0.0007463809053465302, '1.html', 'CNN - Breaking News, Latest News and Videos'), 'http://www.cnn.com/travel': (0.00029613126374601904, '11.html', 'Travel News - CNN.com'), 'http://www.cnn.com': (0.0007463809053465302, '0.html', 'CNN - Breaking News, Latest News and Videos'), 'http://www.cnn.com/videos': (0.0005559263308996543, '13.html', 'Video News - CNN.com'), 'http://www.cnn.com/specials/space-science': (0.000154360946853279, '18.html', 'Space + Science - CNN.com'), 'http://www.cnn.com/africa': (0.000520920663539953, '19.html', 'Africa News - CNN.com'), 'http://www.cnn.com/politics': (0.0008764333193887255, '4.html', 'CNNPolitics - Political News, Analysis and Opinion'), 'http://www.cnn.com/us': (0.0002992529362735944, '2.html', 'U.S. News - CNN.com'), 'http://www.cnn.com/style': (0.0006972365869371648, '10.html', 'CNN Style - Fashion, design, art, architecture and luxury - CNN.com')}
+		self.assertEqual(f,supposedToEqual)
+
+if __name__ == '__main__':
+    unittest.main()

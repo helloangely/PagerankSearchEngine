@@ -1,0 +1,5 @@
+For Part 1, we created an adjacency list and then used BFS and DFS techniques to search for the shortest path. We also mirrored the map given at the beginning, for example when x -> y is in the map, y -> x was not. This is an issue, because if you can get from Bloomington to Bedford, you can also get from Bedford to Bloomington. We fixed this in the beginning before adding items to the adjacency list. We used the Python Queue module to find all possible adjacencies. We used a Priority Queue to keep track of the distance from the nodes. This was the most challenging portion of the assignment. 
+ 
+To run Part 1, you will need to have the map file in the same directory.
+
+For part 2, we used scrapy to establish a first in first out order for the breadth first algorithm, and last in first out for the depth first. Politeness requests were handled through manipulation of scrapy's setting.py and a built into the code counter. We kept the pages visited in a list to prevent repeatedly spamming the same page, or crashing out for the same reason.
